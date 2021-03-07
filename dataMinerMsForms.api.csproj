@@ -5,7 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="dataMinerMsForms.api.sln" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EPPlus" Version="5.5.5" />
+    <PackageReference Include="ExcelDataReader" Version="3.6.0" />
+    <PackageReference Include="ExcelDataReader.DataSet" Version="3.6.0" />
     <PackageReference Include="Microsoft.IdentityModel.Logging" Version="6.8.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.8.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.0.7" />
     <PackageReference Include="TourmalineCore.AspNetCore.JwtAuthentication.Core" Version="0.1.1" />
@@ -13,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\dataMiner.Data\dataMiner.Data.csproj" />
+    <ProjectReference Include="..\DataMiner.Model\DataMiner.Model.csproj" />
     <ProjectReference Include="..\DataMinerBussiness\DataMinerBussiness.csproj" />
   </ItemGroup>
 

@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
 using DataMiner.Model;
 using DataMiner.Model.Models;
 using DataMinerBussiness.IBussiness;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -17,6 +13,7 @@ namespace dataMinerMsForms.api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+   
     public class UsuarioController : ControllerBase
     {
         private IConfiguration _config;
@@ -28,6 +25,7 @@ namespace dataMinerMsForms.api.Controllers
         }
         [HttpGet]
         [Route("Login")]
+       
         public IActionResult Login(string email, string password)
         {
             Response<UsuarioModel> user= usuarioBussines.Login(email, password);

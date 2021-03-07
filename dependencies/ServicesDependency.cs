@@ -16,7 +16,7 @@ namespace dataMinerMsForms.api.dependencies
         {
             services.AddScoped(typeof(IGeneralRepository<>),typeof(GeneralRepository<>));
             services.AddScoped<IUsuarioBussines, UssuarioBusiness>();
-
+            services.AddScoped<IformBusiness, FormBusiness>();
 
 
                 

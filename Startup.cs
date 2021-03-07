@@ -72,7 +72,7 @@ namespace dataMinerMsForms.api
                 options.AddDefaultPolicy(
                     builder =>
                     {
-                        builder.WithOrigins(Configuration["CORS:Urls"].Split(";"))
+                        builder.AllowAnyOrigin()
                                             .AllowAnyHeader()
                                             .AllowAnyMethod();
                         //builder.WithOrigins("https://localhost:44303;https://localhost:44340".Split(";"))
@@ -105,6 +105,7 @@ namespace dataMinerMsForms.api
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -115,14 +116,14 @@ namespace dataMinerMsForms.api
             app.UseRouting();
 
             app.UseAuthorization();
-
+            app.UseCors();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
              #region Swagger
             app.UseSwagger();
-
+         
             app.UseSwaggerUI(config =>
             {
                 config.SwaggerEndpoint("v1/swagger.json", "Data Minner API V1");
